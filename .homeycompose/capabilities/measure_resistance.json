@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Resistance"
+  },
+  "hint": {
+    "en": "Resistance"
+  },
+  "getable": true,
+  "setable": false,
+  "min": 0,
+  "max": 9000000,
+  "units": {
+    "en": "Ω"
+  },
+  "icon": "./assets/thermistor.svg",
+  "insights": false
+}

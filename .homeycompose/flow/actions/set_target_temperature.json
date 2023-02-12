@@ -1,0 +1,28 @@
+{
+  "title": {
+    "en": "Set temperature"
+  },
+  "titleFormatted": {
+    "en": "Set temperature to [[temperature]]"
+  },
+  "hint": {
+    "en": "Set the simulated target temperature."
+  },
+  "args": [
+    {
+      "type": "number",
+      "name": "temperature",
+      "title": {
+        "en": "Temperature"
+      },
+      "placeholder": {
+        "en": "21"
+      }
+    },
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=ohm-on-wifi"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<script type="text/javascript">
+
+  Homey.setTitle('');
+
+  $(function () {
+    var device = {};
+
+    $('#again').click(function () {
+      Homey.showView('list_devices');
+    });
+
+    $('#manual').click(function () {
+      Homey.showView('manual_pairing');
+    });
+
+  })
+</script>
+
+<style type="text/css">
+  .buttons {
+    text-align: center;
+    padding-top: 14px;
+  }
+
+</style>
+
+<header class="homey-header">
+  <h1 class="homey-title" data-i18n="pair.select.title"><!--title--></h1>
+  <p class="homey-subtitle" data-i18n="pair.select.subtitle"><!--subtitle--></p>
+</header>
+
+<p data-i18n="pair.select.intro"><!--intro--></p>
+
+<div class="buttons">
+    <button class="homey-button-full" id="again" data-i18n="pair.select.auto"><!--automatic--></button>
+</div>
+<div class="buttons">
+      <button class="homey-button-full" id="manual" data-i18n="pair.select.manual"><!--manual--></button>
+</div>

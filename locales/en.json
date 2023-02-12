@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Manual configuration",
+      "subtitle": "Configuration",
+      "intro": "Enter the IP address for your device.",
+      "nosettings": "Please fill in all the required fields.",
+      "address": "IP address",
+      "name": "Device name",
+      "serial": "Device serial",
+      "test": "Test connection",
+      "testing": "Connection test successful, you can now connect the device.",
+      "connect": "Connect",
+      "success": "Device added successfully."
+    },
+    "select": {
+      "title": "Pairing",
+      "subtitle": "Select the pairing mode you want to use",
+      "intro": "You can try automatic pairing again or try pairing manually, if you know the IP address of your device.",
+      "manual": "Manual pairing",
+      "auto": "Automatic pairing"
+    }
+ }
+}

@@ -1,0 +1,567 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "io.ohmigo",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Ohmigo"
+  },
+  "description": {
+    "en": "Simplify everyday life with smart technology"
+  },
+  "category": [
+    "energy",
+    "appliances",
+    "tools"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Tapio Heiskanen",
+    "email": "oh2th@iki.fi"
+  },
+  "brandColor": "#2100a7",
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Simulated temperature changed"
+        },
+        "hint": {
+          "en": "Simulated temperature value changed."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ohm-on-wifi"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_temperature",
+            "type": "number",
+            "title": {
+              "en": "Simulated temperature"
+            },
+            "example": 25.5
+          }
+        ],
+        "id": "measure_temperature_changed"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Set temperature"
+        },
+        "titleFormatted": {
+          "en": "Set temperature to [[temperature]]"
+        },
+        "hint": {
+          "en": "Set the simulated target temperature."
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "temperature",
+            "title": {
+              "en": "Temperature"
+            },
+            "placeholder": {
+              "en": "21"
+            }
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ohm-on-wifi"
+          }
+        ],
+        "id": "set_target_temperature"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/ohm-on-wifi/assets/images/small.png",
+        "large": "/drivers/ohm-on-wifi/assets/images/large.png",
+        "xlarge": "/drivers/ohm-on-wifi/assets/images/xlarge.png"
+      },
+      "discovery": "mdns-ohmigo",
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices",
+          "navigation": {
+            "next": "done"
+          }
+        },
+        {
+          "id": "select_pairing"
+        },
+        {
+          "id": "manual_pairing"
+        },
+        {
+          "id": "add_device"
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device configuration"
+          },
+          "children": [
+            {
+              "id": "address",
+              "type": "text",
+              "label": {
+                "en": "IP address"
+              },
+              "value": "0.0.0.0",
+              "hint": {
+                "en": "IP address"
+              }
+            },
+            {
+              "id": "interval",
+              "type": "number",
+              "label": {
+                "en": "Update interval"
+              },
+              "value": 5,
+              "min": 0,
+              "max": 300,
+              "units": {
+                "en": "seconds"
+              },
+              "hint": {
+                "en": "Update inteval 1-300 seconds."
+              }
+            },
+            {
+              "id": "type",
+              "type": "dropdown",
+              "label": {
+                "en": "Sensor type"
+              },
+              "hint": {
+                "en": "Type of the simulated thermistor."
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "29",
+                  "label": {
+                    "en": "AF60"
+                  }
+                },
+                {
+                  "id": "15",
+                  "label": {
+                    "en": "BALCO500"
+                  }
+                },
+                {
+                  "id": "30",
+                  "label": {
+                    "en": "CTC/NIBE"
+                  }
+                },
+                {
+                  "id": "31",
+                  "label": {
+                    "en": "IVT4K7"
+                  }
+                },
+                {
+                  "id": "22",
+                  "label": {
+                    "en": "KTY10-6"
+                  }
+                },
+                {
+                  "id": "19",
+                  "label": {
+                    "en": "KTY11"
+                  }
+                },
+                {
+                  "id": "33",
+                  "label": {
+                    "en": "KTY81/121"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "NI1000DIN"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NI1000LG"
+                  }
+                },
+                {
+                  "id": "16",
+                  "label": {
+                    "en": "NI500"
+                  }
+                },
+                {
+                  "id": "11",
+                  "label": {
+                    "en": "NTC1K"
+                  }
+                },
+                {
+                  "id": "10",
+                  "label": {
+                    "en": "NTC2K2"
+                  }
+                },
+                {
+                  "id": "17",
+                  "label": {
+                    "en": "NTC3K"
+                  }
+                },
+                {
+                  "id": "28",
+                  "label": {
+                    "en": "NTC5K"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "NTC10K"
+                  }
+                },
+                {
+                  "id": "24",
+                  "label": {
+                    "en": "NTC12K"
+                  }
+                },
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "NTC20K"
+                  }
+                },
+                {
+                  "id": "18",
+                  "label": {
+                    "en": "NTC22K"
+                  }
+                },
+                {
+                  "id": "32",
+                  "label": {
+                    "en": "NTC30K"
+                  }
+                },
+                {
+                  "id": "26",
+                  "label": {
+                    "en": "NTC50K"
+                  }
+                },
+                {
+                  "id": "14",
+                  "label": {
+                    "en": "NTC5220"
+                  }
+                },
+                {
+                  "id": "13",
+                  "label": {
+                    "en": "PT100"
+                  }
+                },
+                {
+                  "id": "23",
+                  "label": {
+                    "en": "PT500"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "PT1000"
+                  }
+                },
+                {
+                  "id": "27",
+                  "label": {
+                    "en": "PT1000X"
+                  }
+                },
+                {
+                  "id": "21",
+                  "label": {
+                    "en": "PT1000DAN"
+                  }
+                },
+                {
+                  "id": "25",
+                  "label": {
+                    "en": "PTC1650"
+                  }
+                },
+                {
+                  "id": "20",
+                  "label": {
+                    "en": "PTC5224"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "QAC31"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "STAEFA-T1"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "T7043B"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "TA-EGU"
+                  }
+                },
+                {
+                  "id": "12",
+                  "label": {
+                    "en": "VRC693"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "min_temp",
+              "type": "number",
+              "label": {
+                "en": "Minimum temperature"
+              },
+              "value": 5,
+              "min": -50,
+              "max": 70,
+              "units": {
+                "en": "°C"
+              },
+              "hint": {
+                "en": "Minimum temperature supported by the target device."
+              }
+            },
+            {
+              "id": "max_temp",
+              "type": "number",
+              "label": {
+                "en": "Maximum temperature"
+              },
+              "value": 35,
+              "min": -50,
+              "max": 70,
+              "units": {
+                "en": "°C"
+              },
+              "hint": {
+                "en": "Maximum temperature supported by the target device."
+              }
+            },
+            {
+              "id": "serial",
+              "type": "label",
+              "label": {
+                "en": "Serial number"
+              },
+              "value": "0000000000",
+              "hint": {
+                "en": "Serial number"
+              }
+            },
+            {
+              "id": "firmware",
+              "type": "label",
+              "label": {
+                "en": "Firmware version"
+              },
+              "value": "1.0.0 BUILD: Feb  7 2023 23:07:31",
+              "hint": {
+                "en": "Firmware version"
+              }
+            }
+          ]
+        }
+      ],
+      "name": {
+        "en": "Ohm On Wifi"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_resistance",
+        "measure_type",
+        "measure_uptime"
+      ],
+      "capabilitiesOptions": {
+        "measure_resistance": {
+          "preventTags": true
+        }
+      },
+      "id": "ohm-on-wifi"
+    }
+  ],
+  "capabilities": {
+    "measure_resistance": {
+      "type": "number",
+      "title": {
+        "en": "Resistance"
+      },
+      "hint": {
+        "en": "Resistance"
+      },
+      "getable": true,
+      "setable": false,
+      "min": 0,
+      "max": 9000000,
+      "units": {
+        "en": "Ω"
+      },
+      "icon": "./assets/thermistor.svg",
+      "insights": false
+    },
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature"
+      },
+      "hint": {
+        "en": "Temperature"
+      },
+      "getable": true,
+      "setable": false,
+      "min": -70,
+      "max": 70,
+      "units": {
+        "en": "°C"
+      },
+      "uiComponent": "sensor",
+      "insights": false
+    },
+    "measure_type": {
+      "type": "string",
+      "title": {
+        "en": "Type"
+      },
+      "hint": {
+        "en": "Type of simulated thermistor."
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "./assets/thermistor.svg",
+      "insights": false
+    },
+    "measure_uptime": {
+      "type": "string",
+      "title": {
+        "en": "Uptime"
+      },
+      "hint": {
+        "en": "Uptime"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "./assets/uptime.svg",
+      "insights": false
+    },
+    "target_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Set Temperature"
+      },
+      "hint": {
+        "en": "Set temperature on the sensor"
+      },
+      "getable": true,
+      "setable": true,
+      "min": -50,
+      "max": 70,
+      "units": {
+        "en": "°C"
+      },
+      "uiComponent": "thermostat",
+      "insights": false
+    }
+  },
+  "discovery": {
+    "mdns-ohmigo": {
+      "type": "mdns-sd",
+      "mdns-sd": {
+        "name": "http",
+        "protocol": "tcp"
+      },
+      "id": "{{txt.deviceid}}",
+      "conditions": [
+        [
+          {
+            "field": "txt.manufacturer",
+            "match": {
+              "type": "string",
+              "value": "ohmigo.io"
+            }
+          },
+          {
+            "field": "txt.devicetype",
+            "match": {
+              "type": "string",
+              "value": "ohmonwifi"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

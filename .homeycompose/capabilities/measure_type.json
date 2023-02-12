@@ -1,0 +1,13 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Type"
+  },
+  "hint": {
+    "en": "Type of simulated thermistor."
+  },
+  "getable": true,
+  "setable": false,
+  "icon": "./assets/thermistor.svg",
+  "insights": false
+}

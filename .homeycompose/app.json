@@ -1,0 +1,31 @@
+{
+  "id": "io.ohmigo",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Ohmigo"
+  },
+  "description": {
+    "en": "Simplify everyday life with smart technology"
+  },
+  "category": [
+    "energy",
+    "appliances",
+    "tools"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Tapio Heiskanen",
+    "email": "oh2th@iki.fi"
+  },
+  "brandColor": "#2100a7"
+}

@@ -1,0 +1,110 @@
+<script type="text/javascript">
+
+  Homey.setTitle('');
+
+  $(function () {
+
+    $('#test-connection').click(function () {
+      $('.device-test').hide();
+      $('.device-ok').hide();
+      $('.device-error').hide();
+      $('.device-info').hide();
+
+      var inputaddress = $('#address').val();
+
+      if (inputaddress != '') {
+        var data = {
+          address: inputaddress,
+        };
+
+        Homey.emit('manual_pairing', data)
+          .then(result => {
+            var deviceInfo =
+              "<div class='info-row'><span class='info-label'>Name</span><span class='info-value'> " + result.name + "</span></div>" +
+              "<div class='info-row'><span class='info-label'>Serial</span><span class='info-value'> " + result.data.id + "</span></div>" +
+              "<div class='info-row'><span class='info-label'>Address</span><span class='info-value'> " + result.settings.address + "</span></div>";
+            $('.device-info').show();
+            $('.device-info').html(deviceInfo);
+            $('.device-test').show();
+            $('#connect').prop('disabled', "");
+          })
+          .catch(error => {
+            $('.device-error').show();
+            $('.device-error-msg').html(error);
+          });
+      } else {
+        $('.device-error').show();
+        $('.device-error-msg').html(Homey.__('pair.manual.nosettings'));
+      }
+
+    });
+
+    $('#connect').click(function () {
+      Homey.showView('add_device');
+    });
+  })
+</script>
+
+<style type="text/css">
+  .device-status,
+  .device-info {
+    display: none;
+  }
+
+  .device-info {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  .info-row {
+    min-width: 150px;
+    padding-bottom: 4px;
+  }
+
+  .info-label {
+    display: inline-block;
+    min-width: 100px;
+    font-weight: 700;
+  }
+
+  .messages {
+    padding-top: 14px;
+  }
+</style>
+
+<header class="homey-header">
+  <h1 class="homey-title" data-i18n="pair.manual.title"><!--title--></h1>
+  <p class="homey-subtitle" data-i18n="pair.manual.subtitle"><!--subtitle--></p>
+</header>
+
+<p data-i18n="pair.manual.intro"><!--intro--></p>
+
+<div class="device-pairing">
+  <div class="homey-form-group">
+    <label class="homey-form-label" for="address" data-i18n="pair.manual.address"><!--address--></label>
+    <input class="homey-form-input" id="address" type="text" placeholder="0.0.0.0">
+  </div>
+
+  <div class="homey-form-group buttons">
+    <button class="homey-button-small" style="float: left" id="test-connection" data-i18n="pair.manual.test"><!--address--></button>
+    <button class="homey-button-small" disabled="disabled" style="float: right" id="connect" data-i18n="pair.manual.connect"><!--connect--></button>
+  </div>
+  <br></br>
+</div>
+
+<div class="device-info"></div>
+
+<div class="messages">
+  <p class="device-status device-test" style="color: #008C23;">
+    <i class="fa fa-check"></i>
+    <span class="device-test-msg" data-i18n="pair.manual.testing"><!--pair.manual.testing--></span>
+  </p>
+  <p class="device-status device-ok" style="color: #008C23;">
+    <i class="fa fa-check"></i>
+    <span class="device-ok-msg" data-i18n="pair.manual.success"><!--pair.manual.success--></span>
+  </p>
+  <p class="device-status device-error" style="color: #ff6300;">
+    <i class="fa fa-times"></i>
+    <span class="device-error-msg"></span>
+  </p>
+</div>

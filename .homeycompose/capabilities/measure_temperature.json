@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Temperature"
+  },
+  "hint": {
+    "en": "Temperature"
+  },
+  "getable": true,
+  "setable": false,
+  "min": -70,
+  "max": 70,
+  "units": {
+    "en": "°C"
+  },
+  "uiComponent": "sensor",
+  "insights": false
+}

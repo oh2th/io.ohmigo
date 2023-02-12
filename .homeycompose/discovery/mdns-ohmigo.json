@@ -1,0 +1,26 @@
+{
+    "type": "mdns-sd",
+    "mdns-sd": {
+      "name": "http",
+      "protocol": "tcp"
+    },
+    "id": "{{txt.deviceid}}",
+    "conditions": [
+      [
+        {
+          "field": "txt.manufacturer",
+          "match": {
+            "type": "string",
+            "value": "ohmigo.io"
+          }
+        },
+        {
+          "field": "txt.devicetype",
+          "match": {
+            "type": "string",
+            "value": "ohmonwifi"
+          }
+        }
+      ]
+    ]
+  }

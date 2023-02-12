@@ -1,0 +1,139 @@
+{
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device configuration"
+      },
+      "children": [
+        {
+          "id": "address",
+          "type": "text",
+          "label": {
+            "en": "IP address"
+          },
+          "value": "0.0.0.0",
+          "hint": {
+            "en": "IP address"
+          }
+        },
+        {
+          "id": "interval",
+          "type": "number",
+          "label": {
+            "en": "Update interval"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 300,
+          "units": {
+            "en": "seconds"
+          },
+          "hint": {
+            "en": "Update inteval 1-300 seconds."
+          }
+        },
+        {
+          "id": "type",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensor type"
+          },
+          "hint": {
+            "en": "Type of the simulated thermistor."
+          },
+          "value": "1",
+          "values": [
+            { "id": "29", "label": { "en": "AF60"} },
+            { "id": "15", "label": { "en": "BALCO500" } },
+            { "id": "30", "label": { "en": "CTC/NIBE" } },
+            { "id": "31", "label": { "en": "IVT4K7" } },
+            { "id": "22", "label": { "en": "KTY10-6" } },
+            { "id": "19", "label": { "en": "KTY11" } },
+            { "id": "33", "label": { "en": "KTY81/121" } },
+            { "id":  "2", "label": { "en": "NI1000DIN" } },
+            { "id":  "1", "label": { "en": "NI1000LG" } },
+            { "id": "16", "label": { "en": "NI500" } },
+            { "id": "11", "label": { "en": "NTC1K" } },
+            { "id": "10", "label": { "en": "NTC2K2" } },
+            { "id": "17", "label": { "en": "NTC3K" } },
+            { "id": "28", "label": { "en": "NTC5K" } },
+            { "id":  "7", "label": { "en": "NTC10K" } },
+            { "id": "24", "label": { "en": "NTC12K" } },
+            { "id":  "8", "label": { "en": "NTC20K" } },
+            { "id": "18", "label": { "en": "NTC22K" } },
+            { "id": "32", "label": { "en": "NTC30K" } },
+            { "id": "26", "label": { "en": "NTC50K" } },
+            { "id": "14", "label": { "en": "NTC5220" } },
+            { "id": "13", "label": { "en": "PT100" } },
+            { "id": "23", "label": { "en": "PT500" } },
+            { "id":  "3", "label": { "en": "PT1000" } },
+            { "id": "27", "label": { "en": "PT1000X" } },
+            { "id": "21", "label": { "en": "PT1000DAN" } },
+            { "id": "25", "label": { "en": "PTC1650" } },
+            { "id": "20", "label": { "en": "PTC5224" } },
+            { "id":  "9", "label": { "en": "QAC31" } },
+            { "id":  "5", "label": { "en": "STAEFA-T1" } },
+            { "id":  "6", "label": { "en": "T7043B" } },
+            { "id":  "4", "label": { "en": "TA-EGU" } },
+            { "id": "12", "label": { "en": "VRC693" } }
+          ]
+        },
+        {
+          "id": "min_temp",
+          "type": "number",
+          "label": {
+            "en": "Minimum temperature"
+          },
+          "value": 5,
+          "min": -50,
+          "max": 70,
+          "units": {
+            "en": "°C"
+          },
+          "hint": {
+            "en": "Minimum temperature supported by the target device."
+          }
+        },
+        {
+          "id": "max_temp",
+          "type": "number",
+          "label": {
+            "en": "Maximum temperature"
+          },
+          "value": 35,
+          "min": -50,
+          "max": 70,
+          "units": {
+            "en": "°C"
+          },
+          "hint": {
+            "en": "Maximum temperature supported by the target device."
+          }
+        },
+        {
+          "id": "serial",
+          "type": "label",
+          "label": {
+            "en": "Serial number"
+          },
+          "value": "0000000000",
+          "hint": {
+            "en": "Serial number"
+          }
+        },
+        {
+          "id": "firmware",
+          "type": "label",
+          "label": {
+            "en": "Firmware version"
+          },
+          "value": "1.0.0 BUILD: Feb  7 2023 23:07:31",
+          "hint": {
+            "en": "Firmware version"
+          }
+        }
+      ]
+    }
+  ]
+}

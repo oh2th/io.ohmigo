@@ -1,0 +1,1 @@
+OHMIGO® offers smart products that help you in the energy transition.

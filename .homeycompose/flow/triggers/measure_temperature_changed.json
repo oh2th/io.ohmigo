@@ -1,0 +1,25 @@
+{
+  "title": {
+    "en": "Simulated temperature changed"
+  },
+  "hint": {
+    "en": "Simulated temperature value changed."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=ohm-on-wifi"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_temperature",
+      "type": "number",
+      "title": {
+        "en": "Simulated temperature"
+      },
+      "example": 25.5
+    }
+  ]
+}

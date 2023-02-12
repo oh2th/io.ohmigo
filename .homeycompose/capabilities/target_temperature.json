@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Set Temperature"
+  },
+  "hint": {
+    "en": "Set temperature on the sensor"
+  },
+  "getable": true,
+  "setable": true,
+  "min": -50,
+  "max": 70,
+  "units": {
+    "en": "°C"
+  },
+  "uiComponent": "thermostat",
+  "insights": false
+}
