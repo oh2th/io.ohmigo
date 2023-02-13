@@ -4,7 +4,7 @@
     "en": "Uptime"
   },
   "hint": {
-    "en": "Uptime"
+    "en": "Time since last restart."
   },
   "getable": true,
   "setable": false,

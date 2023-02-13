@@ -33,10 +33,10 @@
     "triggers": [
       {
         "title": {
-          "en": "Simulated temperature changed"
+          "en": "Temperature changed"
         },
         "hint": {
-          "en": "Simulated temperature value changed."
+          "en": "Temperature changed."
         },
         "args": [
           {
@@ -47,15 +47,15 @@
         ],
         "tokens": [
           {
-            "name": "measure_temperature",
+            "name": "output_temperature",
             "type": "number",
             "title": {
-              "en": "Simulated temperature"
+              "en": "Temperature"
             },
             "example": 25.5
           }
         ],
-        "id": "measure_temperature_changed"
+        "id": "output_temperature_changed"
       }
     ],
     "actions": [
@@ -64,7 +64,7 @@
           "en": "Set temperature"
         },
         "titleFormatted": {
-          "en": "Set temperature to [[temperature]]"
+          "en": "Set temperature to [[temperature]] °C"
         },
         "hint": {
           "en": "Set the simulated target temperature."
@@ -441,56 +441,15 @@
       "class": "sensor",
       "capabilities": [
         "target_temperature",
-        "measure_temperature",
-        "measure_resistance",
+        "output_temperature",
+        "output_resistance",
         "measure_type",
         "measure_uptime"
       ],
-      "capabilitiesOptions": {
-        "measure_resistance": {
-          "preventTags": true
-        }
-      },
       "id": "ohm-on-wifi"
     }
   ],
   "capabilities": {
-    "measure_resistance": {
-      "type": "number",
-      "title": {
-        "en": "Resistance"
-      },
-      "hint": {
-        "en": "Resistance"
-      },
-      "getable": true,
-      "setable": false,
-      "min": 0,
-      "max": 9000000,
-      "units": {
-        "en": "Ω"
-      },
-      "icon": "./assets/thermistor.svg",
-      "insights": false
-    },
-    "measure_temperature": {
-      "type": "number",
-      "title": {
-        "en": "Temperature"
-      },
-      "hint": {
-        "en": "Temperature"
-      },
-      "getable": true,
-      "setable": false,
-      "min": -70,
-      "max": 70,
-      "units": {
-        "en": "°C"
-      },
-      "uiComponent": "sensor",
-      "insights": false
-    },
     "measure_type": {
       "type": "string",
       "title": {
@@ -510,11 +469,49 @@
         "en": "Uptime"
       },
       "hint": {
-        "en": "Uptime"
+        "en": "Time since last restart."
       },
       "getable": true,
       "setable": false,
       "icon": "./assets/uptime.svg",
+      "insights": false
+    },
+    "output_resistance": {
+      "type": "number",
+      "title": {
+        "en": "Output Resistance"
+      },
+      "hint": {
+        "en": "Set resistance for output."
+      },
+      "getable": true,
+      "setable": false,
+      "min": 0,
+      "max": 9000000,
+      "units": {
+        "en": "Ω"
+      },
+      "uiComponent": "sensor",
+      "icon": "./assets/thermistor.svg",
+      "insights": false
+    },
+    "output_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Output Temperature"
+      },
+      "hint": {
+        "en": "Set temperature for output."
+      },
+      "getable": true,
+      "setable": false,
+      "min": -70,
+      "max": 70,
+      "units": {
+        "en": "°C"
+      },
+      "uiComponent": "sensor",
+      "icon": "./assets/ohmonwifi.svg",
       "insights": false
     },
     "target_temperature": {
@@ -523,7 +520,7 @@
         "en": "Set Temperature"
       },
       "hint": {
-        "en": "Set temperature on the sensor"
+        "en": "Set temperature on the output."
       },
       "getable": true,
       "setable": true,

@@ -1,9 +1,9 @@
 {
   "title": {
-    "en": "Simulated temperature changed"
+    "en": "Temperature changed"
   },
   "hint": {
-    "en": "Simulated temperature value changed."
+    "en": "Temperature changed."
   },
   "args": [
     {
@@ -14,10 +14,10 @@
   ],
   "tokens": [
     {
-      "name": "measure_temperature",
+      "name": "output_temperature",
       "type": "number",
       "title": {
-        "en": "Simulated temperature"
+        "en": "Temperature"
       },
       "example": 25.5
     }

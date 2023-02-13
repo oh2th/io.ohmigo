@@ -22,9 +22,8 @@ module.exports = class mainDevice extends Device {
     this.interval = settings.interval * 1000;
     this.uptimeUpdate = true; // Update uptime only every second interval
 
-    await this.setCapabilityOptions('target_temperature', { min: settings.min_temp, max: settings.max_temp });
-
     checkCapabilities(this);
+    await this.setCapabilityOptions('target_temperature', { min: settings.min_temp, max: settings.max_temp });
     await this.setCapabilityListeners();
     await this.setCapabilityValues(true);
     await this.setFlowListeners();
@@ -206,10 +205,8 @@ module.exports = class mainDevice extends Device {
         // Update settable temperature range and current temperature setting
         this.updateCapabilityOptions('target_temperature', { min: Number(device.min_temp), max: Number(device.max_temp) });
         this.setValue('target_temperature', Number(device.temperature), check);
-        this.setValue('measure_temperature', Number(device.temperature), check);
-        // Update resistance range and current resistance setting
-        this.setValue('measure_resistance', Number(device.resistance), check);
-        // Update sensor type information
+        this.setValue('output_temperature', Number(device.temperature), check);
+        this.setValue('output_resistance', Number(device.resistance), check);
         this.setValue('measure_type', `${device.type} - ${device.type_name}`, check);
 
         // Update uptime information
@@ -278,34 +275,34 @@ module.exports = class mainDevice extends Device {
       //
 
       // Boolean capabilities where id starts with 'is_'.
-      if (typeof value === 'boolean' && key.startsWith('is_') && oldVal !== value && !firstRun) {
-        const newKey = key.replace(/\./g, '_');
-        const { triggers } = this.homey.manifest.flow;
-        const triggerExists = triggers.find((trigger) => trigger.id === `${newKey}_changed`);
+      // if (typeof value === 'boolean' && key.startsWith('is_') && oldVal !== value && !firstRun) {
+      //   const newKey = key.replace(/\./g, '_');
+      //   const { triggers } = this.homey.manifest.flow;
+      //   const triggerExists = triggers.find((trigger) => trigger.id === `${newKey}_changed`);
 
-        if (triggerExists) {
-          await this.homey.flow
-            .getDeviceTriggerCard(`${newKey}_changed`)
-            .trigger(this, { [`${key}`]: value })
-            .catch(this.error)
-            .then(this.log(`[Device] ${this.getName()} - setValue ${newKey}_changed - Triggered: "${newKey} | ${value}"`));
-        }
-      }
+      //   if (triggerExists) {
+      //     await this.homey.flow
+      //       .getDeviceTriggerCard(`${newKey}_changed`)
+      //       .trigger(this, { [`${key}`]: value })
+      //       .catch(this.error)
+      //       .then(this.log(`[Device] ${this.getName()} - setValue ${newKey}_changed - Triggered: "${newKey} | ${value}"`));
+      //   }
+      // }
 
       // Number capabilities.
-      if (typeof value === 'number' && key.startsWith('num_') && oldVal !== value && !firstRun) {
-        const newKey = key.replace(/\./g, '_');
-        const { triggers } = this.homey.manifest.flow;
-        const triggerExists = triggers.find((trigger) => trigger.id === `${newKey}_changed`);
+      // if (typeof value === 'number' && key.startsWith('num_') && oldVal !== value && !firstRun) {
+      //   const newKey = key.replace(/\./g, '_');
+      //   const { triggers } = this.homey.manifest.flow;
+      //   const triggerExists = triggers.find((trigger) => trigger.id === `${newKey}_changed`);
 
-        if (triggerExists) {
-          await this.homey.flow
-            .getDeviceTriggerCard(`${newKey}_changed`)
-            .trigger(this, { [`${key}`]: value })
-            .catch(this.error)
-            .then(this.log(`[Device] ${this.getName()} - setValue ${newKey}_changed - Triggered: "${newKey} | ${value}"`));
-        }
-      }
+      //   if (triggerExists) {
+      //     await this.homey.flow
+      //       .getDeviceTriggerCard(`${newKey}_changed`)
+      //       .trigger(this, { [`${key}`]: value })
+      //       .catch(this.error)
+      //       .then(this.log(`[Device] ${this.getName()} - setValue ${newKey}_changed - Triggered: "${newKey} | ${value}"`));
+      //   }
+      // }
     }
   }
 

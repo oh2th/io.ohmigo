@@ -4,7 +4,7 @@
     "en": "Set Temperature"
   },
   "hint": {
-    "en": "Set temperature on the sensor"
+    "en": "Set temperature on the output."
   },
   "getable": true,
   "setable": true,

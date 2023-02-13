@@ -5,13 +5,10 @@
   "class": "sensor",
   "capabilities": [
     "target_temperature",
-    "measure_temperature",
-    "measure_resistance",
+    "output_temperature",
+    "output_resistance",
     "measure_type",
     "measure_uptime"
   ],
-  "capabilitiesOptions": {
-    "measure_resistance": {"preventTags": true }
-  },
   "$extends": ["device", "pair-mdns", "settings"]
 }

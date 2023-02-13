@@ -3,7 +3,7 @@
     "en": "Set temperature"
   },
   "titleFormatted": {
-    "en": "Set temperature to [[temperature]]"
+    "en": "Set temperature to [[temperature]] °C"
   },
   "hint": {
     "en": "Set the simulated target temperature."

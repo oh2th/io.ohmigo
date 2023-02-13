@@ -1,10 +1,10 @@
 {
   "type": "number",
   "title": {
-    "en": "Resistance"
+    "en": "Output Resistance"
   },
   "hint": {
-    "en": "Resistance"
+    "en": "Set resistance for output."
   },
   "getable": true,
   "setable": false,
@@ -13,6 +13,7 @@
   "units": {
     "en": "Ω"
   },
+  "uiComponent": "sensor",
   "icon": "./assets/thermistor.svg",
   "insights": false
 }

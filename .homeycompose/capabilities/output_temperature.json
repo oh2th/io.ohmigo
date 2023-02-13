@@ -1,10 +1,10 @@
 {
   "type": "number",
   "title": {
-    "en": "Temperature"
+    "en": "Output Temperature"
   },
   "hint": {
-    "en": "Temperature"
+    "en": "Set temperature for output."
   },
   "getable": true,
   "setable": false,
@@ -14,5 +14,6 @@
     "en": "°C"
   },
   "uiComponent": "sensor",
+  "icon": "./assets/ohmonwifi.svg",
   "insights": false
 }
