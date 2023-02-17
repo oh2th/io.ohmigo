@@ -8,10 +8,12 @@
     "local"
   ],
   "name": {
-    "en": "Ohmigo"
+    "en": "Ohmigo - Ohm on Wifi",
+    "sv": "Ohmigo - Ohm on Wifi"
   },
   "description": {
-    "en": "Simplify everyday life with smart technology"
+    "en": "Simplify everyday life with smart technology",
+    "sv": "Förenkla vardagen med smart teknik"
   },
   "category": [
     "energy",
@@ -29,14 +31,60 @@
     "email": "oh2th@iki.fi"
   },
   "brandColor": "#2100a7",
+  "tags": {
+    "en": [
+      "energy",
+      "temperature control",
+      "ai"
+    ],
+    "sv": [
+      "energi",
+      "temperaturkontroll",
+      "ai"
+    ]
+  },
+  "homeyCommunityTopicId": 76407,
+  "source": "https://github.com/oh2th/io.ohmigo",
+  "homepage": "https://ohmigo.io",
+  "support": "https://github.com/oh2th/io.ohmigo/issues",
+  "bugs": {
+    "url": "https://github.com/oh2th/io.ohmigo/issues"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Thorbjörn Geiser - Ohm on Wifi device and API"
+      }
+    ],
+    "translators": [
+      {
+        "name": "🇬🇧 Tapio Heiskanen"
+      },
+      {
+        "name": "🇸🇪 Thorbjörn Geiser"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "oh2th"
+      },
+      "githubSponsors": {
+        "username": "oh2th"
+      }
+    }
+  },
   "flow": {
     "triggers": [
       {
         "title": {
-          "en": "Temperature changed"
+          "en": "Temperature changed",
+          "sv": "Temperatur ändrad"
         },
         "hint": {
-          "en": "Temperature changed."
+          "en": "Temperature changed.",
+          "sv": "Temperatur ändrad."
         },
         "args": [
           {
@@ -50,7 +98,8 @@
             "name": "output_temperature",
             "type": "number",
             "title": {
-              "en": "Temperature"
+              "en": "Temperature",
+              "sv": "Temperatur"
             },
             "example": 25.5
           }
@@ -61,23 +110,28 @@
     "actions": [
       {
         "title": {
-          "en": "Set temperature"
+          "en": "Set temperature",
+          "sv": "Ställ in temperatur"
         },
         "titleFormatted": {
-          "en": "Set temperature to [[temperature]] °C"
+          "en": "Set temperature to [[temperature]] °C",
+          "sv": "Ställ in temperatur till [[temperature]] °C"
         },
         "hint": {
-          "en": "Set the simulated target temperature."
+          "en": "Set the simulated target temperature.",
+          "sv": "Ställ in den simulerade måltemperaturen."
         },
         "args": [
           {
             "type": "number",
             "name": "temperature",
             "title": {
-              "en": "Temperature"
+              "en": "Temperature",
+              "sv": "Temperatur"
             },
             "placeholder": {
-              "en": "21"
+              "en": "21",
+              "sv": "21"
             }
           },
           {
@@ -137,44 +191,52 @@
         {
           "type": "group",
           "label": {
-            "en": "Device configuration"
+            "en": "Device configuration",
+            "sv": "Enhetskonfiguration"
           },
           "children": [
             {
               "id": "address",
               "type": "text",
               "label": {
-                "en": "IP address"
+                "en": "IP address",
+                "sv": "IP-adress"
               },
               "value": "0.0.0.0",
               "hint": {
-                "en": "IP address"
+                "en": "IP address",
+                "sv": "IP-adress"
               }
             },
             {
               "id": "interval",
               "type": "number",
               "label": {
-                "en": "Update interval"
+                "en": "Update interval",
+                "sv": "Uppdateringsintervall"
               },
               "value": 5,
-              "min": 0,
+              "min": 5,
               "max": 300,
               "units": {
-                "en": "seconds"
+                "en": "seconds",
+                "sv": "sekunder"
               },
               "hint": {
-                "en": "Update inteval 1-300 seconds."
+                "en": "Update interval 5-300 seconds.",
+                "sv": "Uppdateringsintervall 5-300 sekunder."
               }
             },
             {
               "id": "type",
               "type": "dropdown",
               "label": {
-                "en": "Sensor type"
+                "en": "Sensor type",
+                "sv": "Sensortyp"
               },
               "hint": {
-                "en": "Type of the simulated thermistor."
+                "en": "Type of the simulated thermistor.",
+                "sv": "Typ av simulerad termistor."
               },
               "value": "1",
               "values": [
@@ -382,7 +444,8 @@
               "id": "min_temp",
               "type": "number",
               "label": {
-                "en": "Minimum temperature"
+                "en": "Minimum temperature",
+                "sv": "Minsta temperatur"
               },
               "value": 5,
               "min": -50,
@@ -391,14 +454,16 @@
                 "en": "°C"
               },
               "hint": {
-                "en": "Minimum temperature supported by the target device."
+                "en": "Minimum temperature supported by the target device.",
+                "sv": "Minsta temperatur som stöds av målenheten."
               }
             },
             {
               "id": "max_temp",
               "type": "number",
               "label": {
-                "en": "Maximum temperature"
+                "en": "Maximum temperature",
+                "sv": "Maximal temperatur"
               },
               "value": 35,
               "min": -50,
@@ -407,29 +472,32 @@
                 "en": "°C"
               },
               "hint": {
-                "en": "Maximum temperature supported by the target device."
+                "en": "Maximum temperature supported by the target device.",
+                "sv": "Maximal temperatur som stöds av målenheten."
               }
             },
             {
               "id": "serial",
               "type": "label",
               "label": {
-                "en": "Serial number"
+                "en": "Serienummer"
               },
               "value": "0000000000",
               "hint": {
-                "en": "Serial number"
+                "en": "Serienummer"
               }
             },
             {
               "id": "firmware",
               "type": "label",
               "label": {
-                "en": "Firmware version"
+                "en": "Firmware version",
+                "sv": "Firmware version"
               },
               "value": "1.0.0 BUILD: Feb  7 2023 23:07:31",
               "hint": {
-                "en": "Firmware version"
+                "en": "Firmware version",
+                "sv": "Firmware version"
               }
             }
           ]
@@ -453,10 +521,12 @@
     "measure_type": {
       "type": "string",
       "title": {
-        "en": "Type"
+        "en": "Type",
+        "sv": "Typ"
       },
       "hint": {
-        "en": "Type of simulated thermistor."
+        "en": "Type of simulated thermistor.",
+        "sv": "Typ av simulerad termistor."
       },
       "getable": true,
       "setable": false,
@@ -466,10 +536,12 @@
     "measure_uptime": {
       "type": "string",
       "title": {
-        "en": "Uptime"
+        "en": "Uptime",
+        "sv": "Upptid"
       },
       "hint": {
-        "en": "Time since last restart."
+        "en": "Time since last restart.",
+        "sv": "Tid sedan senaste omstart."
       },
       "getable": true,
       "setable": false,
@@ -479,10 +551,12 @@
     "output_resistance": {
       "type": "number",
       "title": {
-        "en": "Output Resistance"
+        "en": "Output resistance",
+        "sv": "Utgångsmotstånd"
       },
       "hint": {
-        "en": "Set resistance for output."
+        "en": "Resistance for output.",
+        "sv": "Motstånd för utgång."
       },
       "getable": true,
       "setable": false,
@@ -498,10 +572,12 @@
     "output_temperature": {
       "type": "number",
       "title": {
-        "en": "Output Temperature"
+        "en": "Output temperature",
+        "sv": "Utgångstemperatur"
       },
       "hint": {
-        "en": "Set temperature for output."
+        "en": "Temperature for output.",
+        "sv": "Temperatur för utgång."
       },
       "getable": true,
       "setable": false,
@@ -517,10 +593,12 @@
     "target_temperature": {
       "type": "number",
       "title": {
-        "en": "Set Temperature"
+        "en": "Set temperature",
+        "sv": "Inställed temperature"
       },
       "hint": {
-        "en": "Set temperature on the output."
+        "en": "Set temperature on the output.",
+        "sv": "Ställ in temperaturen i utgången"
       },
       "getable": true,
       "setable": true,
