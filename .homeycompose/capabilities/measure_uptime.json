@@ -1,10 +1,12 @@
 {
   "type": "string",
   "title": {
-    "en": "Uptime"
+    "en": "Uptime",
+    "sv": "Upptid"
   },
   "hint": {
-    "en": "Time since last restart."
+    "en": "Time since last restart.",
+    "sv": "Tid sedan senaste omstart."
   },
   "getable": true,
   "setable": false,

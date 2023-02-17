@@ -1,22 +1,27 @@
 {
   "title": {
-    "en": "Set temperature"
+    "en": "Set temperature",
+    "sv": "Ställ in temperatur"
   },
   "titleFormatted": {
-    "en": "Set temperature to [[temperature]] °C"
+    "en": "Set temperature to [[temperature]] °C",
+    "sv": "Ställ in temperatur till [[temperature]] °C"
   },
   "hint": {
-    "en": "Set the simulated target temperature."
+    "en": "Set the simulated target temperature.",
+    "sv": "Ställ in den simulerade måltemperaturen."
   },
   "args": [
     {
       "type": "number",
       "name": "temperature",
       "title": {
-        "en": "Temperature"
+        "en": "Temperature",
+        "sv": "Temperatur"
       },
       "placeholder": {
-        "en": "21"
+        "en": "21",
+        "sv": "21"
       }
     },
     {

@@ -3,44 +3,52 @@
     {
       "type": "group",
       "label": {
-        "en": "Device configuration"
+        "en": "Device configuration",
+        "sv": "Enhetskonfiguration"
       },
       "children": [
         {
           "id": "address",
           "type": "text",
           "label": {
-            "en": "IP address"
+            "en": "IP address",
+            "sv": "IP-adress"
           },
           "value": "0.0.0.0",
           "hint": {
-            "en": "IP address"
+            "en": "IP address",
+            "sv": "IP-adress"
           }
         },
         {
           "id": "interval",
           "type": "number",
           "label": {
-            "en": "Update interval"
+            "en": "Update interval",
+            "sv": "Uppdateringsintervall"
           },
           "value": 5,
-          "min": 0,
+          "min": 5,
           "max": 300,
           "units": {
-            "en": "seconds"
+            "en": "seconds",
+            "sv": "sekunder"
           },
           "hint": {
-            "en": "Update inteval 1-300 seconds."
+            "en": "Update interval 5-300 seconds.",
+            "sv": "Uppdateringsintervall 5-300 sekunder."
           }
         },
         {
           "id": "type",
           "type": "dropdown",
           "label": {
-            "en": "Sensor type"
+            "en": "Sensor type",
+            "sv": "Sensortyp"
           },
           "hint": {
-            "en": "Type of the simulated thermistor."
+            "en": "Type of the simulated thermistor.",
+            "sv": "Typ av simulerad termistor."
           },
           "value": "1",
           "values": [
@@ -83,7 +91,8 @@
           "id": "min_temp",
           "type": "number",
           "label": {
-            "en": "Minimum temperature"
+            "en": "Minimum temperature",
+            "sv": "Minsta temperatur"
           },
           "value": 5,
           "min": -50,
@@ -92,14 +101,16 @@
             "en": "°C"
           },
           "hint": {
-            "en": "Minimum temperature supported by the target device."
+            "en": "Minimum temperature supported by the target device.",
+            "sv": "Minsta temperatur som stöds av målenheten."
           }
         },
         {
           "id": "max_temp",
           "type": "number",
           "label": {
-            "en": "Maximum temperature"
+            "en": "Maximum temperature",
+            "sv": "Maximal temperatur"
           },
           "value": 35,
           "min": -50,
@@ -108,29 +119,34 @@
             "en": "°C"
           },
           "hint": {
-            "en": "Maximum temperature supported by the target device."
+            "en": "Maximum temperature supported by the target device.",
+            "sv": "Maximal temperatur som stöds av målenheten."
           }
         },
         {
           "id": "serial",
           "type": "label",
           "label": {
-            "en": "Serial number"
+            "en": "Serial number",
+            "en": "Serienummer"
           },
           "value": "0000000000",
           "hint": {
-            "en": "Serial number"
+            "en": "Serial number",
+            "en": "Serienummer"
           }
         },
         {
           "id": "firmware",
           "type": "label",
           "label": {
-            "en": "Firmware version"
+            "en": "Firmware version",
+            "sv": "Firmware version"
           },
           "value": "1.0.0 BUILD: Feb  7 2023 23:07:31",
           "hint": {
-            "en": "Firmware version"
+            "en": "Firmware version",
+            "sv": "Firmware version"
           }
         }
       ]

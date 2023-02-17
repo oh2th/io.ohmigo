@@ -1,10 +1,12 @@
 {
   "type": "string",
   "title": {
-    "en": "Type"
+    "en": "Type",
+    "sv": "Typ"
   },
   "hint": {
-    "en": "Type of simulated thermistor."
+    "en": "Type of simulated thermistor.",
+    "sv": "Typ av simulerad termistor."
   },
   "getable": true,
   "setable": false,

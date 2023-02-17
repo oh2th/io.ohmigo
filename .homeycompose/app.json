@@ -7,10 +7,12 @@
     "local"
   ],
   "name": {
-    "en": "Ohmigo"
+    "en": "Ohmigo - Ohm on Wifi",
+    "sv": "Ohmigo - Ohm on Wifi"
   },
   "description": {
-    "en": "Simplify everyday life with smart technology"
+    "en": "Simplify everyday life with smart technology",
+    "sv": "Förenkla vardagen med smart teknik"
   },
   "category": [
     "energy",
@@ -27,5 +29,49 @@
     "name": "Tapio Heiskanen",
     "email": "oh2th@iki.fi"
   },
-  "brandColor": "#2100a7"
+  "brandColor": "#2100a7",
+  "tags": {
+    "en": [
+      "energy",
+      "temperature control",
+      "ai"
+    ],
+    "sv": [
+      "energi",
+      "temperaturkontroll",
+      "ai"
+    ]
+  },
+  "homeyCommunityTopicId": 76407,
+  "source": "https://github.com/oh2th/io.ohmigo",
+  "homepage": "https://ohmigo.io",
+  "support": "https://github.com/oh2th/io.ohmigo/issues",
+  "bugs": {
+    "url": "https://github.com/oh2th/io.ohmigo/issues"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Thorbjörn Geiser - Ohm on Wifi device and API"
+      }
+    ],
+    "translators": [
+      {
+        "name": "🇬🇧 Tapio Heiskanen"
+      },
+      {
+        "name": "🇸🇪 Thorbjörn Geiser"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "oh2th"
+      },
+      "githubSponsors": {
+        "username": "oh2th"
+      }
+    }
+  }
 }

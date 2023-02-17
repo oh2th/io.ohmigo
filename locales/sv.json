@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Manuell konfiguration",
+      "subtitle": "Konfiguration",
+      "intro": "Ange IP-adressen för din enhet.",
+      "nosettings": "Fyll i alla obligatoriska fält.",
+      "address": "IP-adress",
+      "name": "Enhetens namn",
+      "serial": "Enhetsserie",
+      "test": "Testa anslutning",
+      "testing": "Anslutningstestet lyckades, du kan nu ansluta enheten.",
+      "connect": "Anslut",
+      "success": "Enheten har lagts till."
+    },
+    "select": {
+      "title": "Parkoppling",
+      "subtitle": "Välj det parningsläge du vill använda",
+      "intro": "Du kan prova automatisk ihopparning igen eller prova ihopparning manuellt, om du känner till din enhets IP-adress.",
+      "manual": "Manuell ihopkoppling",
+      "auto": "Automatisk ihopkoppling"
+    }
+ }
+}

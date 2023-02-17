@@ -1,10 +1,12 @@
 {
   "type": "number",
   "title": {
-    "en": "Output Resistance"
+    "en": "Output resistance",
+    "sv": "Utgångsmotstånd"
   },
   "hint": {
-    "en": "Set resistance for output."
+    "en": "Resistance for output.",
+    "sv": "Motstånd för utgång."
   },
   "getable": true,
   "setable": false,

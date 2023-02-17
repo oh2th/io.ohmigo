@@ -1,10 +1,12 @@
 {
   "type": "number",
   "title": {
-    "en": "Set Temperature"
+    "en": "Set temperature",
+    "sv": "Inställed temperature"
   },
   "hint": {
-    "en": "Set temperature on the output."
+    "en": "Set temperature on the output.",
+    "sv": "Ställ in temperaturen i utgången"
   },
   "getable": true,
   "setable": true,

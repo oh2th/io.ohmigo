@@ -1,9 +1,11 @@
 {
   "title": {
-    "en": "Temperature changed"
+    "en": "Temperature changed",
+    "sv": "Temperatur ändrad"
   },
   "hint": {
-    "en": "Temperature changed."
+    "en": "Temperature changed.",
+    "sv": "Temperatur ändrad."
   },
   "args": [
     {
@@ -17,7 +19,8 @@
       "name": "output_temperature",
       "type": "number",
       "title": {
-        "en": "Temperature"
+        "en": "Temperature",
+        "sv": "Temperatur"
       },
       "example": 25.5
     }
