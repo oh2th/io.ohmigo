@@ -1,5 +1,8 @@
 {
   "1.0.0": {
     "en": "Ohm on Wifi driver - Temeprature control with resistance"
+  },
+  "1.1.0": {
+    "en": "Add support for using custom table 99 for default temperature to resistance mapping."
   }
 }
