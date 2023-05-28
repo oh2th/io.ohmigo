@@ -241,6 +241,12 @@
               "value": "1",
               "values": [
                 {
+                  "id": "99",
+                  "label": {
+                    "en": "- CUSTOM -"
+                  }
+                },
+                {
                   "id": "29",
                   "label": {
                     "en": "AF60"

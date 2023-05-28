@@ -52,6 +52,7 @@
           },
           "value": "1",
           "values": [
+            { "id": "99", "label": { "en": "DEFAULT"} },
             { "id": "29", "label": { "en": "AF60"} },
             { "id": "15", "label": { "en": "BALCO500" } },
             { "id": "30", "label": { "en": "CTC/NIBE" } },

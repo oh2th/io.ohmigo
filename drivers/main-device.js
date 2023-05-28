@@ -69,7 +69,7 @@ module.exports = class mainDevice extends Device {
       await clearIntervals(this);
       setCapabilityValuesInterval(this, newSettings.interval * 1000);
     }
-    if (changedKeys.includes('type')) {
+    if (changedKeys.includes('type') && newSettings.type !== '99') {
       this.log(`${this.getName()} - onSettings - type: ${newSettings.type}`);
       // Call API to set sensor type together with current temperature
       try {
@@ -184,7 +184,9 @@ module.exports = class mainDevice extends Device {
     this.log(`${this.getName()} - onCapability_TARGET_TEMPERATURE: ${value}`);
     try {
       const settings = this.getSettings();
-      this.api.setTemperature(value, settings.type);
+      let sensorType = settings.type;
+      if (sensorType === '99') sensorType = null;
+      this.api.setTemperature(value, sensorType);
     } catch (error) {
       this.log(`${this.getName()} - onCapability_TARGET_TEMPERATURE - error setting temperature => `, error);
     }
@@ -200,6 +202,7 @@ module.exports = class mainDevice extends Device {
       if (deviceInfo && deviceConfig) {
         if (this.getAvailable() === false) this.setAvailable();
         const device = { ...deviceInfo, ...deviceConfig };
+        const settings = this.getSettings();
         // this.log(`${this.getName()} - setCapabilityValues - device => `, deviceInfo);
 
         // Update settable temperature range and current temperature setting
@@ -207,7 +210,7 @@ module.exports = class mainDevice extends Device {
         this.setValue('target_temperature', Number(device.temperature), check);
         this.setValue('output_temperature', Number(device.temperature), check);
         this.setValue('output_resistance', Number(device.resistance), check);
-        this.setValue('measure_type', `${device.type} - ${device.type_name}`, check);
+        this.setValue('measure_type', `${settings.type} - ${device.type_name}`, check);
 
         // Update uptime information
         if (this.uptimeUpdate) {
@@ -218,7 +221,6 @@ module.exports = class mainDevice extends Device {
         }
 
         // Update firmware and sensortype to settings if needed
-        const settings = this.getSettings();
         if (device.type !== settings.type) this.setSettings({ type: device.type });
         if (device.firmware !== settings.firmware) this.setSettings({ firmware: device.firmware });
       }
