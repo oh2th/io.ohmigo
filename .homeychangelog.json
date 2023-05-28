@@ -4,5 +4,8 @@
   },
   "1.1.0": {
     "en": "Add support for using custom table 99 for default temperature to resistance mapping."
+  },
+  "1.1.1": {
+    "en": "FIX: Swedish translations bug in settings .json"
   }
 }
