@@ -129,12 +129,12 @@
           "type": "label",
           "label": {
             "en": "Serial number",
-            "en": "Serienummer"
+            "sv": "Serienummer"
           },
           "value": "0000000000",
           "hint": {
             "en": "Serial number",
-            "en": "Serienummer"
+            "sv": "Serienummer"
           }
         },
         {
