@@ -1,6 +1,7 @@
 'use strict';
 
 const Homey = require('homey');
+const { Log } = require('homey-log');
 
 module.exports = class OhmigoApp extends Homey.App {
 
@@ -9,6 +10,7 @@ module.exports = class OhmigoApp extends Homey.App {
    */
   async onInit() {
     this.myAppIdVersion = `${this.homey.manifest.id}/${this.homey.manifest.version}`;
+    this.homeyLog = new Log({ homey: this.homey });
     this.log(`${this.myAppIdVersion} - onInit - starting...`);
   }
 
