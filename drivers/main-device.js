@@ -47,7 +47,7 @@ module.exports = class mainDevice extends Device {
       }
     } catch (error) {
       this.log(`${this.getName()} - onAdded - error => `, error);
-      this.setUnavailable('Device offline.');
+      this.setUnavailable(`Device offline - ${error}`);
     }
     this.log(`${this.getName()} - onAdded done`);
   }
@@ -226,7 +226,7 @@ module.exports = class mainDevice extends Device {
       }
     } catch (error) {
       this.log(`${this.getName()} - setCapabilityValues - offline: ${error}`);
-      this.setUnavailable('Device offline.');
+      this.setUnavailable(`Device offline - ${error}`);
     }
   }
 
