@@ -13,5 +13,8 @@
   },
   "1.1.3": {
     "en": "FIX: Sentry DSN"
+  },
+  "1.2.0": {
+    "en": "ADD: Axios intercepts for http error handling."
   }
 }
