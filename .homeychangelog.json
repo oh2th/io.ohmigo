@@ -16,5 +16,8 @@
   },
   "1.2.0": {
     "en": "ADD: Axios intercepts for http error handling."
+  },
+  "1.3.0": {
+    "en": "Replaced Axios http-client with http.min for optimized memory performance."
   }
 }
