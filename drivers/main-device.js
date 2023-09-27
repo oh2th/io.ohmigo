@@ -198,7 +198,14 @@ module.exports = class mainDevice extends Device {
   async setCapabilityValues(check = false) {
     try {
       const deviceInfo = await this.api.getInfo();
+      // Check if there was a connection error and throw the error message for catch.
+      if (deviceInfo.errno !== undefined) {
+        const error = `${deviceInfo.code} ${deviceInfo.address}:${deviceInfo.port}}`;
+        throw new Error(error);
+      }
       const deviceConfig = await this.api.getConfig();
+      console.log(`deviceInfo: ${typeof deviceInfo} ${JSON.stringify(deviceInfo)}`);
+      console.log(`deviceConfig: ${typeof deviceConfig} ${JSON.stringify(deviceConfig)}`);
       if (deviceInfo && deviceConfig) {
         if (this.getAvailable() === false) this.setAvailable();
         const device = { ...deviceInfo, ...deviceConfig };
