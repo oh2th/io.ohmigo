@@ -203,9 +203,13 @@ module.exports = class mainDevice extends Device {
         const error = `${deviceInfo.code} ${deviceInfo.address}:${deviceInfo.port}}`;
         throw new Error(error);
       }
+      if (deviceInfo.uptime === undefined) {
+        const error = 'Couldn\'t get uptime from device, check device.';
+        throw new Error(error);
+      }
       const deviceConfig = await this.api.getConfig();
-      console.log(`deviceInfo: ${typeof deviceInfo} ${JSON.stringify(deviceInfo)}`);
-      console.log(`deviceConfig: ${typeof deviceConfig} ${JSON.stringify(deviceConfig)}`);
+      this.log(`deviceInfo: ${typeof deviceInfo} ${JSON.stringify(deviceInfo)}`);
+      this.log(`deviceConfig: ${typeof deviceConfig} ${JSON.stringify(deviceConfig)}`);
       if (deviceInfo && deviceConfig) {
         if (this.getAvailable() === false) this.setAvailable();
         const device = { ...deviceInfo, ...deviceConfig };
