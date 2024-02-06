@@ -25,5 +25,8 @@
   },
   "1.3.2": {
     "en": "FIX: Connectivity issues may cause app to crash. Check uptime from device."
+  },
+  "1.3.3": {
+    "en": "API Verify received json for proper attributes"
   }
 }
