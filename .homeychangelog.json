@@ -28,5 +28,8 @@
   },
   "1.3.3": {
     "en": "API Verify received json for proper attributes"
+  },
+  "1.3.4": {
+    "en": "Catch unhandledRejections"
   }
 }
