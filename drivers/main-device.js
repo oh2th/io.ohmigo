@@ -42,8 +42,8 @@ module.exports = class mainDevice extends Device {
       const deviceInfo = await this.api.getInfo();
       if (deviceInfo) {
         this.log(`${this.getName()} - onAdded - device => `, deviceInfo);
-        this.setSettings({ type: deviceInfo.type });
-        this.setSettings({ firmware: deviceInfo.firmware });
+        await this.setSettings({ type: deviceInfo.type });
+        await this.setSettings({ firmware: deviceInfo.firmware });
       }
     } catch (error) {
       this.log(`${this.getName()} - onAdded - error => `, error);
@@ -233,20 +233,8 @@ module.exports = class mainDevice extends Device {
 
         this.log(`deviceType: OLD ${typeof settings.type} ${settings.type} NEW ${typeof device.type} ${device.type}`);
         // Update firmware and sensortype to settings if needed
-        if (device.type !== settings.type) {
-          try {
-            this.setSettings({ type: device.type });
-          } catch (error) {
-            this.log(`${this.getName()} - setCapabilityValues - error: ${error}`);
-          }
-        }
-        if (device.firmware !== settings.firmware) {
-          try {
-            this.setSettings({ firmware: device.firmware });
-          } catch (error) {
-            this.log(`${this.getName()} - setCapabilityValues - error: ${error}`);
-          }
-        }
+        if (device.type !== settings.type) await this.setSettings({ type: device.type });
+        if (device.firmware !== settings.firmware) await this.setSettings({ firmware: device.firmware });
       }
     } catch (error) {
       this.log(`${this.getName()} - setCapabilityValues - offline: ${error}`);
