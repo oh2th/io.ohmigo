@@ -231,9 +231,22 @@ module.exports = class mainDevice extends Device {
           this.uptimeUpdate = true;
         }
 
+        this.log(`deviceType: OLD ${typeof settings.type} ${settings.type} NEW ${typeof device.type} ${device.type}`);
         // Update firmware and sensortype to settings if needed
-        if (device.type !== settings.type) this.setSettings({ type: device.type });
-        if (device.firmware !== settings.firmware) this.setSettings({ firmware: device.firmware });
+        if (device.type !== settings.type) {
+          try {
+            this.setSettings({ type: device.type });
+          } catch (error) {
+            this.log(`${this.getName()} - setCapabilityValues - error: ${error}`);
+          }
+        }
+        if (device.firmware !== settings.firmware) {
+          try {
+            this.setSettings({ firmware: device.firmware });
+          } catch (error) {
+            this.log(`${this.getName()} - setCapabilityValues - error: ${error}`);
+          }
+        }
       }
     } catch (error) {
       this.log(`${this.getName()} - setCapabilityValues - offline: ${error}`);
