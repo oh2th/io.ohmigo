@@ -1,0 +1,29 @@
+{
+  "id": "target_temperature_set",
+  "highlight": true,
+  "title": {
+    "en": "Set the temperature",
+    "sv": "Ställ in temperaturen"
+  },
+  "titleFormatted": {
+    "en": "Set the temperature to [[target_temperature]]°C",
+    "sv": "Ställ in temperatur till [[target_temperature]]°C"
+  },
+
+  "args": [
+    {
+      "name": "target_temperature",
+      "type": "range",
+      "min": -50,
+      "max": 70,
+      "step": 0.5,
+      "label": "°C",
+      "labelDecimals": 1
+    },
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=ohm-on-wifi"
+    }
+  ]
+}

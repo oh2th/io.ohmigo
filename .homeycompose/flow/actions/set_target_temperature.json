@@ -4,8 +4,8 @@
     "sv": "Ställ in temperatur"
   },
   "titleFormatted": {
-    "en": "Set temperature to [[temperature]] °C",
-    "sv": "Ställ in temperatur till [[temperature]] °C"
+    "en": "Set temperature to [[temperature]]°C",
+    "sv": "Ställ in temperatur till [[temperature]]°C"
   },
   "hint": {
     "en": "Set the simulated target temperature.",
@@ -29,5 +29,6 @@
       "name": "device",
       "filter": "driver_id=ohm-on-wifi"
     }
-  ]
+  ],
+  "deprecated": true
 }

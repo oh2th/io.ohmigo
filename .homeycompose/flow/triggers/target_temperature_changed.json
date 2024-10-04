@@ -1,0 +1,18 @@
+{
+  "id": "target_temperature_changed",
+  "title": {
+    "en": "The target temperature changed",
+    "sv": "Måltemperaturen ändrades"
+  },
+  "tokens": [
+    {
+      "name": "target_temperature",
+      "title": {
+        "en": "Target temperature",
+        "sv": "Måltemperatur"
+      },
+      "type": "number",
+      "example": 23.5
+    }
+  ]
+}

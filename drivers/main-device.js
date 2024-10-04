@@ -166,13 +166,18 @@ module.exports = class mainDevice extends Device {
    * Capability Listeners for Flow actions
    */
   async setFlowListeners() {
-    const action_TARGET_TEMPERATURE = this.homey.flow.getActionCard('set_target_temperature');
-    action_TARGET_TEMPERATURE.registerRunListener(async (args, state) => {
+    // 2024-10-04 DEPRECATED action card - set_target_temperature
+    this.homey.flow.getActionCard('set_target_temperature').registerRunListener(async (args, state) => {
       const getCapabilityOptions = this.getCapabilityOptions('target_temperature');
       if (args.temperature < getCapabilityOptions.min || args.temperature > getCapabilityOptions.max) {
         return Promise.reject(new Error(`Temperature must be between ${getCapabilityOptions.min} and ${getCapabilityOptions.max}`));
       }
-      await args.device.onCapability_TARGET_TEMPERATURE(args.temperature);
+      args.device.onCapability_TARGET_TEMPERATURE(args.temperature);
+    });
+
+    // 2024-10-04 NEW action card - target_temperature_set
+    this.homey.flow.getActionCard('target_temperature_set').registerRunListener((args, state) => {
+      args.device.onCapability_TARGET_TEMPERATURE(args.target_temperature);
     });
   }
 
