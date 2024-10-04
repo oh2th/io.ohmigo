@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "io.ohmigo",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -132,8 +132,8 @@
           "sv": "Ställ in temperatur"
         },
         "titleFormatted": {
-          "en": "Set temperature to [[temperature]] °C",
-          "sv": "Ställ in temperatur till [[temperature]] °C"
+          "en": "Set temperature to [[temperature]]°C",
+          "sv": "Ställ in temperatur till [[temperature]]°C"
         },
         "hint": {
           "en": "Set the simulated target temperature.",
@@ -167,6 +167,10 @@
         "title": {
           "en": "Set the temperature",
           "sv": "Ställ in temperaturen"
+        },
+        "titleFormatted": {
+          "en": "Set the temperature to [[target_temperature]]°C",
+          "sv": "Ställ in temperatur till [[target_temperature]]°C"
         },
         "args": [
           {
