@@ -1,7 +1,6 @@
 'use strict';
 
 const Homey = require('homey');
-
 module.exports = class OhmigoApp extends Homey.App {
 
   /**
