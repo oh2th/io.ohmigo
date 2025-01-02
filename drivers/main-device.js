@@ -13,7 +13,7 @@ module.exports = class mainDevice extends Device {
    */
   async onInit() {
     this.log(`${this.getName()} - onInit`);
-    this.setUnavailable(`Initializing ${this.getName()}`);
+    this.setUnavailable(`Initializing ${this.getName()}`).catch(error);
 
     const settings = this.getSettings();
     this.api = new OhmOnWifiAPI();
@@ -47,7 +47,7 @@ module.exports = class mainDevice extends Device {
       }
     } catch (error) {
       this.log(`${this.getName()} - onAdded - error => `, error);
-      this.setUnavailable(`Device offline - ${error}`);
+      this.setUnavailable(`Device offline - ${error}`).catch(error);
     }
     this.log(`${this.getName()} - onAdded done`);
   }
@@ -152,7 +152,7 @@ module.exports = class mainDevice extends Device {
    */
   onDiscoveryLastSeenChanged(discoveryResult) {
     this.log(`${this.getName()} - offline - result: ${discoveryResult.address}.`);
-    this.setUnavailable('Discovery device offline.');
+    this.setUnavailable('Discovery device offline.').catch(error);
   }
 
   /**
@@ -243,7 +243,7 @@ module.exports = class mainDevice extends Device {
       }
     } catch (error) {
       this.log(`${this.getName()} - setCapabilityValues - offline: ${error}`);
-      this.setUnavailable(`Device offline - ${error}`);
+      this.setUnavailable(`Device offline - ${error}`).catch(error);
     }
   }
 
