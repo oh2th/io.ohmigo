@@ -9,7 +9,10 @@
     "en": "Set the temperature to [[target_temperature]]°C",
     "sv": "Ställ in temperatur till [[target_temperature]]°C"
   },
-
+  "hint": {
+    "en": "Set the target temperature.",
+    "sv": "Ställ in måltemperaturen."
+  },
   "args": [
     {
       "name": "target_temperature",

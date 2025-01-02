@@ -3,6 +3,10 @@
     "en": "Temperature changed",
     "sv": "Temperatur ändrad"
   },
+  "titleFormatted": {
+    "en": "Temperature changed",
+    "sv": "Temperatur ändrad"
+  },
   "hint": {
     "en": "Temperature changed.",
     "sv": "Temperatur ändrad."

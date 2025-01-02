@@ -4,6 +4,14 @@
     "en": "The target temperature changed",
     "sv": "Måltemperaturen ändrades"
   },
+  "titleFormatted": {
+    "en": "The target temperature changed",
+    "sv": "Måltemperaturen ändrades"
+  },
+  "hint": {
+    "en": "The target temperature changed.",
+    "sv": "Måltemperaturen ändrades."
+  },
   "tokens": [
     {
       "name": "target_temperature",
